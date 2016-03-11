@@ -19,7 +19,7 @@ compgen -v | while read var; do
 	echo $var
 done | tee $env_file > /dev/null
 
-docker pull neochrome/dpython:latest
+docker pull neochrome/dpython:latest > /dev/null && \
 docker run \
 	--interactive \
 	$tty \
