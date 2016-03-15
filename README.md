@@ -31,3 +31,10 @@ want to, it's easy to build a local image:
 $ cd dpython
 $ make
 ```
+
+
+## Updating local image
+In order to force an update of the docker image, run:
+```
+$ make update
+```

@@ -15,11 +15,10 @@ done
 
 env_file=$(mktemp)
 compgen -v | while read var; do
-  [[ $var =~ ^(LC_|PATH|SHELL|TERM) ]] && continue
+  [[ $var =~ ^(LC_|PATH|SHELL|TERM|PYTHONPATH) ]] && continue
 	echo $var
 done | tee $env_file > /dev/null
 
-docker pull neochrome/dpython:latest > /dev/null && \
 docker run \
 	--interactive \
 	$tty \
