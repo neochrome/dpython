@@ -38,3 +38,7 @@ In order to force an update of the docker image, run:
 ```
 $ make update
 ```
+or
+```
+$ docker pull neochrome/dpython:latest
+```

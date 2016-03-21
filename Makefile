@@ -8,5 +8,8 @@ update:
 
 install:
 	@echo Installing to /usr/bin
-	@install -Dm755 dpython.sh /usr/bin/dpython
-	@install -Dm755 dpip.sh /usr/bin/dpip
+	@install -Dm755 run.sh /usr/bin/dpython
+	@install -Dm755 run.sh /usr/bin/dpip
+
+clean:
+	@docker rmi neochrome/dpython
