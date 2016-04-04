@@ -41,13 +41,19 @@ for var in $(env); do
 	env_keys="$env_keys --env=${var%%=*}"
 done
 
+case "$OSTYPE" in
+	darwin*) user='';;
+	linux*) user="--user $(id -u):$(id -g)";;
+	*) echo "Unsupported os: $OSTYPE"; exit 1;;
+esac
+
 docker run \
 	--interactive \
 	$tty \
 	--rm \
 	--net host \
-	--user "$(id -u):$(id -g)" \
-	--volume "$PWD:/src:rw" \
+	$user \
+	--volume "$(pwd):/src:rw" \
 	--workdir /src \
 	--entrypoint $entrypoint \
 	$env_keys \

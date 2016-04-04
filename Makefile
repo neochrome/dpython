@@ -8,8 +8,8 @@ update:
 
 install:
 	@echo Installing to /usr/bin
-	@install -Dm755 run.sh /usr/bin/dpython
-	@install -Dm755 run.sh /usr/bin/dpip
+	@install -m755 run.sh /usr/bin/dpython
+	@install -m755 run.sh /usr/bin/dpip
 
 clean:
 	@docker rmi neochrome/dpython
